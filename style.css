@@ -148,6 +148,7 @@ section {
 
 .HeroBackground {
   background-image: url("assets/images/HeroBackground.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -428,6 +429,9 @@ section {
 
 .BackgroundPrisRDV {
   background-image: url("assets/images/reservation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   position: relative;
   padding: 1rem;
 }
