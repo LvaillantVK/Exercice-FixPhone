@@ -33,7 +33,7 @@ h3 {
 }
 
 address {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   font-style: normal;
 }
@@ -43,6 +43,13 @@ h4 {
   font-weight: bold;
   padding: 0;
   margin: 0;
+}
+
+.Nosave {
+  -webkit-user-drag: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: auto; /* laisse l'image interagir si besoin (inutile s'il n'y a pas de <a>) */
 }
 
 .FondBleu {
@@ -294,6 +301,7 @@ section {
 .ConteneurCard {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 3rem;
 }
 
@@ -382,36 +390,35 @@ section {
   align-items: center;
 }
 
-.AdresseHoraire {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.AdresseHoraire ol li {
+.desktopcolumn ol li {
   list-style: none;
 }
 
 .TableHoraire {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
+  margin-bottom: 5rem;
+  width: fit-content;
 }
 
-.TableHoraire table th {
-  padding: 10px;
+.TableHoraire td,
+th {
+  padding-right: 5rem;
+  text-align: left;
+}
+
+.TableHoraire thead th {
+  padding-bottom: 1rem;
 }
 
 .TitreClassHoraire {
   display: flex;
+  margin-bottom: 1rem;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 1rem;
 }
@@ -615,13 +622,14 @@ footer a {
   .desktopcolumn {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .desktoprow {
     display: flex;
     gap: 2rem;
     width: 100%;
+    padding: 0;
     justify-content: space-between;
   }
 
@@ -677,14 +685,23 @@ footer a {
     flex: 1;
   }
 
-  .AdresseHoraire {
+  .desktopcolumn {
     flex-direction: column;
   }
-  .AdresseHoraire address {
+  .desktopcolumn address {
     text-align: left;
   }
-  .AdresseHoraire ol li {
+  .desktopcolumn ol li {
     text-align: left;
+    display: flex;
+    justify-content: start;
+    padding: 0;
+  }
+
+  .desktopcolumn ol {
+    text-align: left;
+
+    padding: 0;
   }
 
   .PrisRDV {
